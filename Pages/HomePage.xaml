@@ -9,6 +9,6 @@
       Title="HomePage">
 
     <Grid>
-        
+        <TextBlock Text="Home" FontSize="30" FontWeight="Bold" />
     </Grid>
 </Page>

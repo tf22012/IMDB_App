@@ -20,31 +20,27 @@ namespace IMDB_App
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void Test_Click(object sender, RoutedEventArgs e)
-        {
-
+            mainFrame.Navigate(new HomePage());
         }
 
         private void HomeBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            mainFrame.NavigationService.Navigate(new Pages.HomePage());
         }
 
         private void ActorBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            mainFrame.NavigationService.Navigate(new Pages.ActorsPage());
         }
 
         private void DirectorBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            mainFrame.NavigationService.Navigate(new Pages.DirectorsPage());
         }
 
         private void TitlesBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            mainFrame.NavigationService.Navigate(new Pages.TitlesPage());
         }
     }
 }

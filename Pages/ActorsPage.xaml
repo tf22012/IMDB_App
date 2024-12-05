@@ -9,6 +9,6 @@
       Title="ActorsPage">
 
     <Grid>
-        
+        <TextBlock Text="Actors" FontSize="30" FontWeight="Bold" />
     </Grid>
 </Page>

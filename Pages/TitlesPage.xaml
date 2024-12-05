@@ -9,6 +9,6 @@
       Title="TitlesPage">
 
     <Grid>
-        
+        <TextBlock Text="Titles" FontSize="30" FontWeight="Bold" />
     </Grid>
 </Page>

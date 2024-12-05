@@ -9,6 +9,6 @@
       Title="DirectorsPage">
 
     <Grid>
-        
+        <TextBlock Text="Directors" FontSize="30" FontWeight="Bold" />
     </Grid>
 </Page>
