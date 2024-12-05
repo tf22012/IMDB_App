@@ -6,7 +6,50 @@
         xmlns:local="clr-namespace:IMDB_App"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Window.Resources>
+        <BitmapImage x:Key="homeImage" UriSource="/Images/home-IMDB.png"/>
+        <BitmapImage x:Key="directorImage" UriSource="/Images/director-IMDB.png"/>
+        <BitmapImage x:Key="actorImage" UriSource="/Images/actor-IMDB.png"/>
+        <BitmapImage x:Key="searchImage" UriSource="/Images/search-IMDB.png"/>
+        <BitmapImage x:Key="titlesImage" UriSource="/Images/titles-IMDB.png"/>
+    </Window.Resources>
+    
+    <DockPanel>
+        <!-- Sidebar with gradient background for ToolBar -->
+        <ToolBar DockPanel.Dock="Left">
+            <StackPanel Orientation="Vertical" Width="50">
 
-    </Grid>
+                <Button x:Name="HomeBtn" ToolTip="Go to Home" Click="HomeBtn_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="{StaticResource homeImage}"/>
+                        <TextBlock Text="Home" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="ActorBtn" ToolTip="View Actors" Click="ActorBtn_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="{StaticResource actorImage}"/>
+                        <TextBlock Text="Actors" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+
+                <Button x:Name="DirectorBtn" ToolTip="View Directors" Click="DirectorBtn_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="{StaticResource directorImage}"/>
+                        <TextBlock Text="Directors" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                
+                <Button x:Name="TitlesBtn" ToolTip="View" Click="TitlesBtn_Click">
+                    <StackPanel Orientation="Vertical">
+                        <Image Source="{StaticResource titlesImage}"/>
+                        <TextBlock Text="Titles" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+
+            </StackPanel>
+        </ToolBar>
+
+        <Frame x:Name="mainFrame" DockPanel.Dock="Bottom" Width="auto" Height="auto" NavigationUIVisibility="Hidden"/>
+    </DockPanel>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using IMDB_App.Pages;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,31 @@ namespace IMDB_App
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Test_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HomeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ActorBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DirectorBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TitlesBtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
