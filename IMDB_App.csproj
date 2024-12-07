@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Jura.ttf" />
     <None Remove="Images\actor-IMDB.png" />
     <None Remove="Images\director-IMDB.png" />
     <None Remove="Images\home-IMDB.png" />
@@ -30,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Jura.ttf" />
     <Resource Include="Images\actor-IMDB.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
