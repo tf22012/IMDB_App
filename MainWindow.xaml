@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
+        <Style TargetType="ToolBar">
+            <Setter Property="Background" Value="#9FADBD" />
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#9FADBD"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
+        
         <BitmapImage x:Key="homeImage" UriSource="/Images/home-IMDB.png"/>
         <BitmapImage x:Key="directorImage" UriSource="/Images/director-IMDB.png"/>
         <BitmapImage x:Key="actorImage" UriSource="/Images/actor-IMDB.png"/>
@@ -40,7 +50,7 @@
                     </StackPanel>
                 </Button>
                 
-                <Button x:Name="TitlesBtn" ToolTip="View" Click="TitlesBtn_Click">
+                <Button x:Name="TitlesBtn" ToolTip="View Titles" Click="TitlesBtn_Click">
                     <StackPanel Orientation="Vertical">
                         <Image Source="{StaticResource titlesImage}"/>
                         <TextBlock Text="Titles" HorizontalAlignment="Center" />
