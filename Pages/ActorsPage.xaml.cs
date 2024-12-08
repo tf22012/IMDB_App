@@ -24,5 +24,9 @@ namespace IMDB_App.Pages
         {
             InitializeComponent();
         }
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
