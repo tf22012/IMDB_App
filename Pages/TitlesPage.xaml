@@ -74,11 +74,25 @@
         <ListView x:Name="titlesListView" Height="400">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{ Binding PTitle }" Foreground="White" />
-                    </StackPanel>
+                    <Border BorderBrush="White" BorderThickness="2" Background="#3B4856" Padding="5" Margin="0,2,0,2">
+                        <StackPanel Orientation="Horizontal">
+                            <!-- First Column (Title and Genres) -->
+                            <StackPanel Orientation="Vertical" Width="515">
+                                <TextBlock Text="{ Binding PTitle }" Foreground="White" FontSize="18" FontWeight="SemiBold" FontFamily="pack://application:,,,/Fonts/#Jura" />
+                                <TextBlock Text="{ Binding Genres }" Foreground="White" FontSize="12" FontWeight="Light" FontFamily="pack://application:,,,/Fonts/#Jura" />
+                            </StackPanel>
+
+                            <!-- Second Column (Display Info) -->
+                            <StackPanel Orientation="Vertical" Width="150">
+                                <TextBlock Text="{ Binding DisplayInfo }" Foreground="White" HorizontalAlignment="Right" FontSize="12" FontWeight="Light" FontFamily="pack://application:,,,/Fonts/#Jura" Padding="0" />
+                                <TextBlock Text="{ Binding Rating }" Foreground="White" HorizontalAlignment="Right" FontSize="12" FontWeight="Light" FontFamily="pack://application:,,,/Fonts/#Jura" Padding="0" />
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
     </StackPanel>
 </Page>

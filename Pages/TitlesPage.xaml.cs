@@ -1,4 +1,5 @@
 ﻿using IMDB_App.Data;
+using IMDB_App.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -55,10 +56,15 @@ namespace IMDB_App.Pages
                 select new
                 {
                     PTitle = title.PrimaryTitle,
-                    Genres = title.Genres.Select(genre => new
-                    {
-                        GenreName = genre.Name
-                    }).ToList()
+                    Genres = string.Join(", ", title.Genres.Select(genre => genre.Name)),
+                    DisplayInfo = title.TitleType == "tvSeries"
+                    ? $"{(title.EpisodeParentTitles.Any()
+                        ? $"{title.EpisodeParentTitles.Select(e => e.SeasonNumber).Distinct().Count()} Season(s), {title.EpisodeParentTitles.Count} Episode(s)"
+                        : "N/A")}"
+                    : $"Released: {(title.StartYear.HasValue ? title.StartYear.ToString() : "Unknown")}",
+                    Rating = $"\nRating: {(title.Rating != null ? title.Rating.AverageRating.ToString() : "N/A")}"
+
+
                 };
 
             titlesListView.ItemsSource = query.ToList();
