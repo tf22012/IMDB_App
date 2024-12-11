@@ -57,9 +57,9 @@ namespace IMDB_App.Pages
                  select new
                  {
                      HeaderText = $"{actorGroup.Key}",
-                     actors = actorGroup.Take(10).ToList()
+                     actors = actorGroup.Take(5).ToList()
                  })
-                .Take(10);
+                .Take(5);
 
 
             // Execute the query against the database and assign it as the data source for the list view

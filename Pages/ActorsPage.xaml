@@ -27,29 +27,6 @@
             <Setter Property="Margin" Value="0,0,5,0"/>
         </Style>
 
-        <!-- Style for ComboBox -->
-        <Style TargetType="ComboBox">
-            <Setter Property="Width" Value="300" />
-            <Setter Property="Height" Value="35" />
-            <Setter Property="Background" Value="#3B4856" />
-            <Setter Property="BorderBrush" Value="#3B4856" />
-            <Setter Property="Foreground" Value="white" />
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="Padding" Value="5" />
-        </Style>
-
-        <!-- Style for ComboBox Items -->
-        <Style TargetType="ComboBoxItem">
-            <Setter Property="Background" Value="#9FADBD" />
-            <Setter Property="Foreground" Value="black" />
-            <Setter Property="FontSize" Value="16" />
-            <Setter Property="Padding" Value="5" />
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="white" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
 
         <!-- Style for Search Button -->
         <Style TargetType="Button">
@@ -114,60 +91,37 @@
             </StackPanel>
         </Grid>
 
-        <!--Alphabet buttons
-        <StackPanel x:Name="AlphabetPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="10000000" Margin="10" />
-        -->
-
-        <!--<Grid>-->
-        <!---->
-        <!--<TreeView x:Name="directorsListView">
-                <TreeView.ItemTemplate> 
-                    <HierarchicalDataTemplate>
-                        <TextBlock Text="{Binding HeaderText}"/>
-                        <HierarchicalDataTemplate.ItemTemplate >
-                            <DataTemplate>
-                                <Expander>
-                                    <StackPanel>
-                                        <ListView ItemsSource="{}"></ListView>
-                                    </StackPanel>
-                                </Expander>
-                            </DataTemplate>
-                        </HierarchicalDataTemplate.ItemTemplate>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>-->
-
         <ListView x:Name="actorsListView" Height="400">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding HeaderText }"/>
-                        <Expander Header="View Directors">
-                            <ListView ItemsSource="{Binding actors}">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <StackPanel>
-                                            <TextBlock Text="{Binding PrimaryName}" />
-                                            <Expander Header="View Movies and Series">
-                                                <ListView ItemsSource="{Binding TitlesNavigation}">
-                                                    <ListView.ItemTemplate>
-                                                        <DataTemplate>
-                                                            <TextBlock Text="{Binding PrimaryTitle}" />
-                                                        </DataTemplate>
-                                                    </ListView.ItemTemplate>
-                                                </ListView>
-                                            </Expander>
-                                        </StackPanel>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </Expander>
-                    </StackPanel>
+                    <Border BorderBrush="White" Background="#9FADBD" BorderThickness="3">
+                        <StackPanel Orientation="Horizontal" Width="695">
+                            <TextBlock Text="{Binding HeaderText }" FontFamily="pack://application:,,,/Fonts/#Jura" Foreground="White" FontSize="25"/>
+                            <Expander BorderThickness="0" Width="650" Padding="0, 5, 0, 5">
+                                <ListView ItemsSource="{Binding actors}" Height="Auto" Background="#3B4856">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding PrimaryName}" FontFamily="pack://application:,,,/Fonts/#Jura" Foreground="White" FontSize="15" />
+                                                <Expander BorderThickness="0" BorderBrush="#3B4856">
+                                                    <ListView ItemsSource="{Binding TitlesNavigation}" Height="Auto" Background="#3B4856">
+                                                        <ListView.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding PrimaryTitle}" FontFamily="pack://application:,,,/Fonts/#Jura" Foreground="White" FontSize="15"/>
+                                                            </DataTemplate>
+                                                        </ListView.ItemTemplate>
+                                                    </ListView>
+                                                </Expander>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Expander>
+                        </StackPanel>
+                    </Border>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <!--</Grid>-->
-
 
     </StackPanel>
 </Page>
