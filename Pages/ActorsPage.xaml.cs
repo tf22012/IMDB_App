@@ -18,6 +18,7 @@ using IMDB_App.Models;
 using IMDB_App.Data;
 using IMDB_App.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
 
 namespace IMDB_App.Pages
 {
@@ -43,13 +44,12 @@ namespace IMDB_App.Pages
 
             //Set the viewsource data source to use the artists data collection (dbset)
             actorsViewSource.Source = _context.Titles.Local.ToObservableCollection();
-
             LoadActorData("");    
         }
 
         private void LoadActorData(string searchText = "")
         {
-            var actorsWithTitles = _context.Names.Include(n => n.Titles);
+            var actorsWithTitles = _context.Names.Include(n => n.TitlesNavigation);
 
             var query =
                 (from actor in actorsWithTitles
@@ -59,9 +59,10 @@ namespace IMDB_App.Pages
                  select new
                  {
                      HeaderText = $"{actorGroup.Key}",
-                     actors = actorGroup.Take(10).ToList()
+                     actors = actorGroup.Take(5).ToList()
                  })
-                .Take(10);
+                .Take(5);
+
 
             // Execute the query against the database and assign it as the data source for the list view
             actorsListView.ItemsSource = query.ToList();

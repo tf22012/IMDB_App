@@ -141,26 +141,26 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding HeaderText}" />
-                        <Expander Header="View Actors">
-                            <ComboBox ItemsSource="{Binding actors}">
-                                <ComboBox.ItemTemplate>
+                        <TextBlock Text="{Binding HeaderText }"/>
+                        <Expander Header="View Directors">
+                            <ListView ItemsSource="{Binding actors}">
+                                <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
                                             <TextBlock Text="{Binding PrimaryName}" />
                                             <Expander Header="View Titles">
-                                                <ComboBox ItemsSource="{Binding Titles}">
-                                                    <ComboBox.ItemTemplate>
+                                                <ListView ItemsSource="{Binding TitlesNavigation}">
+                                                    <ListView.ItemTemplate>
                                                         <DataTemplate>
                                                             <TextBlock Text="{Binding PrimaryTitle}" />
                                                         </DataTemplate>
-                                                    </ComboBox.ItemTemplate>
-                                                </ComboBox>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
                                             </Expander>
                                         </StackPanel>
                                     </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Expander>
                     </StackPanel>
                 </DataTemplate>

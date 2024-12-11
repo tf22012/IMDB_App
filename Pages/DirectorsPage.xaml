@@ -143,24 +143,24 @@
                     <StackPanel>
                         <TextBlock Text="{Binding HeaderText }"/>
                         <Expander Header="View Directors">
-                            <ComboBox ItemsSource="{Binding directors}">
-                                <ComboBox.ItemTemplate>
+                            <ListView ItemsSource="{Binding directors}">
+                                <ListView.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
                                             <TextBlock Text="{Binding PrimaryName}" />
                                             <Expander Header="View Titles">
-                                                <ComboBox ItemsSource="{Binding Titles}">
-                                                    <ComboBox.ItemTemplate>
+                                                <ListView ItemsSource="{Binding Titles}">
+                                                    <ListView.ItemTemplate>
                                                         <DataTemplate>
                                                             <TextBlock Text="{Binding PrimaryTitle}" />
                                                         </DataTemplate>
-                                                    </ComboBox.ItemTemplate>
-                                                </ComboBox>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
                                             </Expander>
                                         </StackPanel>
                                     </DataTemplate>
-                                </ComboBox.ItemTemplate>
-                            </ComboBox>
+                                </ListView.ItemTemplate>
+                            </ListView>
                         </Expander>
                     </StackPanel>
                 </DataTemplate>
