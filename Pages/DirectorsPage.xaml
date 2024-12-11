@@ -114,29 +114,6 @@
             </StackPanel>
         </Grid>
 
-        <!--Alphabet buttons
-        <StackPanel x:Name="AlphabetPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="10000000" Margin="10" />
-        -->
-
-        <!--<Grid>-->
-        <!---->
-        <!--<TreeView x:Name="directorsListView">
-                <TreeView.ItemTemplate> 
-                    <HierarchicalDataTemplate>
-                        <TextBlock Text="{Binding HeaderText}"/>
-                        <HierarchicalDataTemplate.ItemTemplate >
-                            <DataTemplate>
-                                <Expander>
-                                    <StackPanel>
-                                        <ListView ItemsSource="{}"></ListView>
-                                    </StackPanel>
-                                </Expander>
-                            </DataTemplate>
-                        </HierarchicalDataTemplate.ItemTemplate>
-                    </HierarchicalDataTemplate>
-                </TreeView.ItemTemplate>
-            </TreeView>-->
-
         <ListView x:Name="directorsListView" Height="400">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -166,7 +143,5 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <!--</Grid>-->
-
     </StackPanel>
 </Page>

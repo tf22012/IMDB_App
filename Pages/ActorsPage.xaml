@@ -148,7 +148,7 @@
                                     <DataTemplate>
                                         <StackPanel>
                                             <TextBlock Text="{Binding PrimaryName}" />
-                                            <Expander Header="View Titles">
+                                            <Expander Header="View Movies and Series">
                                                 <ListView ItemsSource="{Binding TitlesNavigation}">
                                                     <ListView.ItemTemplate>
                                                         <DataTemplate>
