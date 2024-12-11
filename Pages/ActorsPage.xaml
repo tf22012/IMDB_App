@@ -27,6 +27,30 @@
             <Setter Property="Margin" Value="0,0,5,0"/>
         </Style>
 
+        <!-- Style for ComboBox -->
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="300" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Background" Value="#f8f9fa" />
+            <Setter Property="BorderBrush" Value="#9FADBD" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Padding" Value="5" />
+        </Style>
+
+        <!-- Style for ComboBox Items -->
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="Background" Value="#E0EAF3" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Padding" Value="5" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#D6E4EF" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
         <!-- Style for Search Button -->
         <Style TargetType="Button">
             <Setter Property="Background" Value="#9FADBD" />
@@ -117,28 +141,26 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
-                        <TextBlock Text="{Binding HeaderText }"/>
+                        <TextBlock Text="{Binding HeaderText}" />
                         <Expander Header="View Actors">
-                            <ListView ItemsSource="{ Binding actors }">
-                                <ListView.ItemTemplate>
+                            <ComboBox ItemsSource="{Binding actors}">
+                                <ComboBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel>
                                             <TextBlock Text="{Binding PrimaryName}" />
                                             <Expander Header="View Titles">
-                                                <ListView ItemsSource="{Binding Titles}">
-                                                    <ListView.ItemTemplate>
+                                                <ComboBox ItemsSource="{Binding Titles}">
+                                                    <ComboBox.ItemTemplate>
                                                         <DataTemplate>
-                                                            <StackPanel>
-                                                                <TextBlock Text="{Binding PrimaryTitle}" />
-                                                            </StackPanel>
+                                                            <TextBlock Text="{Binding PrimaryTitle}" />
                                                         </DataTemplate>
-                                                    </ListView.ItemTemplate>
-                                                </ListView>
+                                                    </ComboBox.ItemTemplate>
+                                                </ComboBox>
                                             </Expander>
                                         </StackPanel>
                                     </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
                         </Expander>
                     </StackPanel>
                 </DataTemplate>
