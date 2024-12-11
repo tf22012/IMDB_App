@@ -42,6 +42,8 @@ namespace IMDB_App.Pages
 
             //Set the viewsource data source to use the artists data collection (dbset)
             directorsViewSource.Source = _context.Titles.Local.ToObservableCollection();
+
+            LoadDirectorData("");
         }
 
         private void LoadDirectorData(string searchText = "")
