@@ -8,9 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DirectorsPage">
 
-        <Page.Resources>
-
-
+    <Page.Resources>
         <!-- Style for Title Text Box-->
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="pack://application:,,,/Fonts/#Jura" />
@@ -70,16 +68,17 @@
     </Page.Resources>
 
     <StackPanel Background="#416788">
+        
         <!--Search Bar and Title-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            
+
             <!--Title-->
             <TextBlock Text="IMDB Directors" Grid.Column="0" VerticalAlignment="Center"/>
-            
+
             <!--Search Bar-->
             <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <TextBox x:Name="catalogSearchBox" />
@@ -88,9 +87,12 @@
                 </Button>
             </StackPanel>
         </Grid>
-
-        <StackPanel x:Name="AlphabetPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" />
         
-        <ListView></ListView>
+        <!--Alphabet buttons-->
+        <StackPanel x:Name="AlphabetPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="10000000" Margin="10" />
+
+        <!-- Directors List -->
+        <ListBox x:Name="DirectorsListBox" Margin="10" Background="#f8f9fa" Foreground="Black" FontSize="18" />
+
     </StackPanel>
 </Page>
