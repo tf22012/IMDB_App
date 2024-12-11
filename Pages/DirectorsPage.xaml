@@ -124,6 +124,17 @@
                                     <DataTemplate>
                                         <StackPanel>
                                             <TextBlock Text="{Binding PrimaryName}" />
+                                            <Expander Header="View Titles">
+                                                <ListView ItemsSource="{Binding Titles}">
+                                                    <ListView.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel>
+                                                                <TextBlock Text="{Binding PrimaryTitle}" />
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ListView.ItemTemplate>
+                                                </ListView>
+                                            </Expander>
                                         </StackPanel>
                                     </DataTemplate>
                                 </ListView.ItemTemplate>
