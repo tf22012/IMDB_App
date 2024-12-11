@@ -31,22 +31,22 @@
         <Style TargetType="ComboBox">
             <Setter Property="Width" Value="300" />
             <Setter Property="Height" Value="35" />
-            <Setter Property="Background" Value="#f8f9fa" />
-            <Setter Property="BorderBrush" Value="#9FADBD" />
-            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="#3B4856" />
+            <Setter Property="BorderBrush" Value="#3B4856" />
+            <Setter Property="Foreground" Value="white" />
             <Setter Property="FontSize" Value="16" />
             <Setter Property="Padding" Value="5" />
         </Style>
 
         <!-- Style for ComboBox Items -->
         <Style TargetType="ComboBoxItem">
-            <Setter Property="Background" Value="#E0EAF3" />
-            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="Background" Value="#9FADBD" />
+            <Setter Property="Foreground" Value="black" />
             <Setter Property="FontSize" Value="16" />
             <Setter Property="Padding" Value="5" />
             <Style.Triggers>
                 <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#D6E4EF" />
+                    <Setter Property="Background" Value="white" />
                 </Trigger>
             </Style.Triggers>
         </Style>
