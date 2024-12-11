@@ -65,6 +65,8 @@
 
         <BitmapImage x:Key="searchImage" UriSource="../Images/search-IMDB.png"/>
 
+        <CollectionViewSource x:Key="directorsViewSource"></CollectionViewSource>
+
     </Page.Resources>
 
     <StackPanel Background="#416788">
@@ -81,18 +83,29 @@
 
             <!--Search Bar-->
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <TextBox x:Name="catalogSearchBox" />
+                <TextBox x:Name="directorsSearchBox" />
                 <Button Click="SearchBtn_Click">
                     <Image Source="{ StaticResource searchImage }" />
                 </Button>
             </StackPanel>
         </Grid>
         
-        <!--Alphabet buttons-->
+        <!--Alphabet buttons
         <StackPanel x:Name="AlphabetPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="10000000" Margin="10" />
-
-        <!-- Directors List -->
-        <ListBox x:Name="DirectorsListBox" Margin="10" Background="#f8f9fa" Foreground="Black" FontSize="18" />
+        -->
+        
+        <ListView x:Name="directorsListView" Height="400">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding HeaderText }"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
 
     </StackPanel>
 </Page>
+
+
+
