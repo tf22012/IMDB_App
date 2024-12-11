@@ -93,17 +93,41 @@
         <!--Alphabet buttons
         <StackPanel x:Name="AlphabetPanel" HorizontalAlignment="Left" VerticalAlignment="Top" Height="10000000" Margin="10" />
         -->
-        
-        <ListView x:Name="directorsListView" Height="400">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding HeaderText }"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
 
+        <!--<Grid>-->
+            <!---->
+            <!--<TreeView x:Name="directorsListView">
+                <TreeView.ItemTemplate> 
+                    <HierarchicalDataTemplate>
+                        <TextBlock Text="{Binding HeaderText}"/>
+                        <HierarchicalDataTemplate.ItemTemplate >
+                            <DataTemplate>
+                                <Expander>
+                                    <StackPanel>
+                                        <ListView ItemsSource="{}"></ListView>
+                                    </StackPanel>
+                                </Expander>
+                            </DataTemplate>
+                        </HierarchicalDataTemplate.ItemTemplate>
+                    </HierarchicalDataTemplate>
+                </TreeView.ItemTemplate>
+            </TreeView>-->
+
+            <ListView x:Name="directorsListView" Height="400">
+              <ListView.ItemTemplate>
+                  <DataTemplate>
+                      <StackPanel>
+                          <TextBlock Text="{Binding HeaderText }"/>
+                           <Expander Header="View Directors">
+                               
+                            </Expander>
+                      </StackPanel>
+                  </DataTemplate>
+              </ListView.ItemTemplate>
+          </ListView>
+        <!--</Grid>-->
+        
+  
     </StackPanel>
 </Page>
 

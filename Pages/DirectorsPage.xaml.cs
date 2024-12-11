@@ -37,8 +37,8 @@ namespace IMDB_App.Pages
             directorsViewSource = (CollectionViewSource)FindResource(nameof(directorsViewSource));
 
             //Use the dbContext to tell EF to load the data we want to use on this page.
-            _context.Titles.Load();
-            _context.Names.Load();
+            _context.Titles.Take(100).Load();
+            _context.Names.Take(100).Load();
 
             //Set the viewsource data source to use the artists data collection (dbset)
             directorsViewSource.Source = _context.Titles.Local.ToObservableCollection();
@@ -47,14 +47,15 @@ namespace IMDB_App.Pages
         private void LoadDirectorData(string searchText = "")
         {
             var query =
-                 from director in _context.Names
-                 where string.IsNullOrEmpty(searchText) || director.PrimaryName.Contains(searchText) && director.PrimaryProfession.Contains("director")
-                 group director by director.PrimaryName.ToUpper().Substring(0, 1) into directorGroup
-                 select new
-                 {
-                     HeaderText = $"{directorGroup.Key}",
-                     artists = directorGroup.ToList<Name>(),
-                 };
+                 (from director in _context.Names
+                  where string.IsNullOrEmpty(searchText) || director.PrimaryName.Contains(searchText) && director.PrimaryProfession.Contains("director")
+                  group director by director.PrimaryName.ToUpper().Substring(0, 1) into directorGroup
+                  select new
+                  {
+                      HeaderText = $"{directorGroup.Key}",
+                      directors = directorGroup.Take(100).ToList<Name>(),
+                  })
+                 .Take(100);
 
             // Execute the query against the database and assign it as the data source for the list view
             directorsListView.ItemsSource = query.ToList();
