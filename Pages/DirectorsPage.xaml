@@ -117,11 +117,19 @@
               <ListView.ItemTemplate>
                   <DataTemplate>
                       <StackPanel>
-                          <TextBlock Text="{Binding HeaderText }"/>
-                           <Expander Header="View Directors">
-                               
-                            </Expander>
-                      </StackPanel>
+                        <TextBlock Text="{Binding HeaderText }"/>
+                        <Expander Header="View Directors">
+                            <ListView ItemsSource="{ Binding directors }">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="{Binding PrimaryName}" />
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </Expander>
+                    </StackPanel>
                   </DataTemplate>
               </ListView.ItemTemplate>
           </ListView>
